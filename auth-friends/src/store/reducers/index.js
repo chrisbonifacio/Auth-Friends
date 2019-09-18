@@ -30,7 +30,7 @@ export const rootReducer = (state = inititalState, action) => {
     case GET_FRIENDS_SUCCESS:
       return {
         ...state,
-        friends: [...state.friends, action.payload],
+        friends: state.friends.concat(action.payload),
         isLoading: false
       }
     case GET_FRIENDS_FAILURE:
