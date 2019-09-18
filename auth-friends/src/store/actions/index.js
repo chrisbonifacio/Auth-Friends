@@ -20,13 +20,15 @@ export const LOGIN_START = "LOGIN_START"
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS"
 export const LOGIN_FAILURE = "LOGIN_FAILURE"
 
-export const login = credentials => dispatch => {
+export const login = (credentials, ownProps) => dispatch => {
   dispatch({ type: LOGIN_START })
+  console.log(ownProps)
   axiosWithAuth()
     .post("/login", credentials)
     .then(res => {
       dispatch({ type: LOGIN_SUCCESS })
       localStorage.setItem("token", res.data.payload)
+      ownProps.history.push("/friends")
     })
     .catch(err => {
       dispatch({ type: LOGIN_FAILURE })
