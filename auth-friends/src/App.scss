@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  text-align: center;
+}
+
+.add-friend {
+  margin-bottom: 2rem;
+}
+
+.friends-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+
+  .friend {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: 1rem;
+  }
+}
