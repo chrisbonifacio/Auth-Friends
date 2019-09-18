@@ -1,9 +1,8 @@
 import React from "react"
 import { connect } from "react-redux"
 import { Link } from "react-router-dom"
-import { axiosWithAuth } from "../utils/axiosWithAuth"
 
-import { login, LOGIN_START } from "../store/actions"
+import { login } from "../store/actions"
 
 class LoginForm extends React.Component {
   constructor(props) {
