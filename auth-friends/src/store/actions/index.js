@@ -45,7 +45,7 @@ export const addFriend = friend => dispatch => {
   axiosWithAuth()
     .post("/friends", friend)
     .then(res => {
-      dispatch({ type: ADD_FRIEND_SUCCESS, payload: res.data })
+      dispatch({ type: ADD_FRIEND_SUCCESS, payload: friend })
       console.log(res)
     })
     .catch(err => {
